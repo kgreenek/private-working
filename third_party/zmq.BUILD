@@ -1,8 +1,10 @@
 cc_library(
     name = "zmq",
     srcs = glob([
+        "src/*.c",
         "src/*.cpp",
-        "src/*.h*",
+        "src/*.h",
+        "src/*.hpp",
     ]) + [":platform_hpp"],
     hdrs = ["include/zmq.h"],
     includes = ["include"],
@@ -14,7 +16,7 @@ genrule(
     srcs = ["builds/cmake/platform.hpp.in"],
     outs = ["platform.hpp"],
     # TODO: These are hard-coded for reasonable values when compiling on linux, but may not work
-    # on other platforms. calculate these dynamically like zmq's cmake build would.
+    # on other platforms. Calculate these dynamically like zmq's cmake build would.
     cmd = """
         cp $< $@
         sed -i -e 's/#cmakedefine ZMQ_USE_KQUEUE/\/\* #undef ZMQ_USE_KQUEUE \*\//g' $@
