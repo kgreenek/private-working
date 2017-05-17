@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ign_transport_echo_test.proto;
+
+message EchoRequest {
+  int32 value = 1;
+}
+
+message EchoReply {
+  int32 value = 1;
+}
