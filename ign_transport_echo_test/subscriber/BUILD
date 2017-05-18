@@ -1,5 +1,5 @@
 cc_binary(
-    name = "publisher",
+    name = "subscriber",
     srcs = ["main.cpp"],
     deps = [
         "//external:ign_msgs",
