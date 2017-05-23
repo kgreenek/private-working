@@ -85,3 +85,16 @@ bind(
     name = "zmq",
     actual = "@zmq_archive//:zmq",
 )
+
+new_http_archive(
+    name = "cppzmq_archive",
+    urls = ["https://github.com/zeromq/cppzmq/archive/v4.2.1.tar.gz"],
+    sha256 = "11c699001659336c7d46779f714f3e9d15d63343cd2ae7c1905e4bf58907cef9",
+    strip_prefix = "cppzmq-4.2.1",
+    build_file = "//third_party:cppzmq.BUILD",
+)
+
+bind(
+    name = "cppzmq",
+    actual = "@cppzmq_archive//:cppzmq",
+)

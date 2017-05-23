@@ -19,8 +19,8 @@ cc_library(
         ":transport_hh",
     ],
     includes = ["include"],
-    linkopts = ["-luuid"],
     deps = [
+        "//external:cppzmq",
         "//external:ign_math",
         "//external:ign_msgs",
         "//external:zmq",
